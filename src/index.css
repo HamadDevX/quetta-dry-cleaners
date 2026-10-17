@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+/* Black & gold theme */
+@theme {
+  --color-bg: #0a0a0a;
+  --color-gold-100: #f8edc4;
+  --color-gold-200: #f1dc90;
+  --color-gold-300: #e8c95f;
+  --color-gold-400: #dbb544;
+  --color-gold-500: #d4af37;
+  --color-gold-600: #b8922a;
+  --color-gold-700: #8f7020;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, "Segoe UI", Tahoma, sans-serif;
+  background: #0a0a0a;
+}
+
+::selection {
+  background: rgba(212, 175, 55, 0.35);
+}
+
+* {
+  scrollbar-color: #3a3220 #0a0a0a;
+}
+
+.field {
+  @apply w-full rounded-lg border border-zinc-700 bg-zinc-900/70 px-3 py-2 text-sm text-zinc-100 outline-none transition focus:border-gold-500;
+}
+
+.btn-primary {
+  @apply rounded-lg bg-gold-500 px-3 py-2 text-sm font-semibold text-black hover:bg-gold-400;
+}
+
+.btn-muted {
+  @apply rounded-lg border border-zinc-700 bg-zinc-800 px-3 py-2 text-sm text-zinc-100 hover:border-gold-600 hover:bg-zinc-700;
+}

@@ -1,0 +1,50 @@
+{
+  "appId": "com.quetta.drycleaners",
+  "productName": "Quetta Dry Cleaners",
+  "files": [
+    "dist/**/*",
+    "electron/**/*",
+    "assets/**/*",
+    "node_modules/**/*",
+    "package.json"
+  ],
+  "directories": {
+    "output": "release"
+  },
+  "win": {
+    "target": [
+      {
+        "target": "nsis",
+        "arch": [
+          "x64"
+        ]
+      }
+    ],
+    "artifactName": "Quetta_Dry_Cleaners_Setup.exe",
+    "icon": "assets/Quetta_Dry_Cleaners_Logo.ico"
+  },
+  "nsis": {
+    "oneClick": true,
+    "allowToChangeInstallationDirectory": false,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "shortcutName": "Quetta Dry Cleaners"
+  },
+  "extraMetadata": {
+    "main": "electron/main.cjs"
+  },
+  "asarUnpack": [
+    "node_modules/whatsapp-web.js/**/*",
+    "node_modules/puppeteer-core/**/*",
+    "node_modules/puppeteer/**/*"
+  ],
+  "extraResources": [
+    {
+      "from": ".cache/puppeteer/chrome",
+      "to": "chromium",
+      "filter": [
+        "**/*"
+      ]
+    }
+  ]
+}
